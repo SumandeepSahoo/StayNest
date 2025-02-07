@@ -1,0 +1,90 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <!-- Icons Section -->
+    <div class="icons-container d-flex justify-content-around my-3 flex-wrap">
+        <div class="icon"><i class="fas fa-mountain"></i> Amazing views</div>
+        <div class="icon"><i class="fas fa-star"></i> Icons</div>
+        <div class="icon"><i class="fas fa-swimming-pool"></i> Amazing pools</div>
+        <div class="icon"><i class="fas fa-tractor"></i> Farms</div>
+        <div class="icon"><i class="fas fa-campground"></i> Camping</div>
+        <div class="icon"><i class="fas fa-tree"></i> Off-the-grid</div>
+        <div class="icon"><i class="fas fa-water"></i> Beachfront</div>
+        <div class="icon"><i class="fas fa-house-user"></i> Lakefront</div>
+    </div>
+
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4">
+        <% for(let listing of allListings) { %>
+            <div class="col">
+                <a href="/listings/<%= listing._id %>" class="listing-link">
+                    <div class="card listing-card">
+                        <div class="image-wrapper">
+                            <img src="<%= listing.image.url %>" 
+                                 class="card-img-top" 
+                                 alt="listing_image"
+                            />
+                            <div class="overlay-text">Guest favourite</div>
+                        </div>  
+                        <div class="card-body">
+                          <p class="card-text">
+                            <b><%= listing.title %> </b><br />
+                            &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
+                          </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <% } %>
+    </div>
+
+    <style>
+        /* Icons Styling */
+        .icons-container {
+            display: flex;
+            justify-content: space-around;
+            font-size: 1rem;
+            font-weight: bold;
+            flex-wrap: wrap;
+        }
+        .icon {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Image Styling */
+        .image-wrapper {
+            position: relative;
+            height: 250px; /* Fixed height for consistency */
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Overlay Label */
+        .overlay-text {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        /* Card Styling */
+        .listing-card {
+            border: none;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .listing-card:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</body>
