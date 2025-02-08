@@ -1,0 +1,156 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to StayNest</h1>
+            <p>Escape the ordinary. Find extraordinary stays for unforgettable experiences.</p>
+            <a href="/listings" class="btn btn-primary btn-lg">Start Exploring</a>
+
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <div class="features-container">
+        <h2>Find Your Perfect Stay</h2>
+        <p class="feature-subtext">Curated stays for every kind of traveler.</p>
+        <div class="icons-container">
+            <div class="icon"><i class="fas fa-mountain"></i> <span>Breathtaking Views</span></div>
+            <div class="icon"><i class="fas fa-star"></i> <span>Highly Rated</span></div>
+            <div class="icon"><i class="fas fa-swimming-pool"></i> <span>Luxurious Pools</span></div>
+            <div class="icon"><i class="fas fa-tractor"></i> <span>Farm Retreats</span></div>
+            <div class="icon"><i class="fas fa-campground"></i> <span>Camping Escapes</span></div>
+            <div class="icon"><i class="fas fa-tree"></i> Off-the-grid</div>
+        </div>
+    </div>
+
+    <style>
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(to bottom, rgba(0, 91, 187, 0.5), rgba(240, 248, 255, 0.9)), 
+                        url('/images/hero-bg.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            padding: 50px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #003b8b;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: #0056b3;
+        }
+
+        /* CTA Section */
+        .cta-container {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to right, #ffffff, #e1edff);
+            color: #0056b3;
+            border-radius: 15px;
+            margin: -40px auto 50px;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0, 0, 100, 0.2);
+        }
+
+        .cta-container h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-container .btn {
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            background: #0056b3;
+            color: white;
+            border: 2px solid #0056b3;
+            transition: all 0.3s ease-in-out;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0, 0, 100, 0.15);
+        }
+
+        .cta-container .btn:hover {
+            transform: translateY(-3px);
+            background: white;
+            color: #0056b3;
+        }
+
+        /* Features Section */
+        .features-container {
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .features-container h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #003b8b;
+        }
+
+        .feature-subtext {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .icons-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* Feature Icons */
+        .icon {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            color: #0056b3;
+            box-shadow: 0 3px 8px rgba(0, 100, 255, 0.1);
+            min-width: 180px;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+            background: #e1edff;
+            box-shadow: 0 5px 12px rgba(0, 100, 255, 0.2);
+        }
+
+        .icon i {
+            font-size: 2rem;
+            color: #0056b3;
+        }
+    </style>
+</body>
